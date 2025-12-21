@@ -29,7 +29,7 @@ const AddAdress = () => {
   const handleChange=(e)=>{
     const {name,value}=e.target;
     setAddress((prevAddres)=>({
-      ...AddAdress,
+      ...prevAddres,
       [name]:value,
     }))
   }
@@ -50,8 +50,18 @@ const AddAdress = () => {
           </div>
 
          <InputField handleChange={handleChange} address={address} name='email' type="email" placeholder="Email Address" />
-
-          </form>
+         <InputField handleChange={handleChange} address={address} name='street' type="email" placeholder="Street" />
+        <div className='grid grid-cols-2 gap-4'>
+          <InputField handleChange={handleChange} address={address} name='city' type="text" placeholder="City" />
+          <InputField handleChange={handleChange} address={address} name='State' type="text" placeholder="State" />
+        </div>
+        <div className='grid grid-cols-2 gap-4'>
+          <InputField handleChange={handleChange} address={address} name='zip-code' type="number" placeholder="Zip-Code" />
+          <InputField handleChange={handleChange} address={address} name='country' type="email" placeholder="Country" />
+        </div>
+        <InputField handleChange={handleChange} address={address} name='Phone' type="text" placeholder="Phone" />
+        <button className='w-full mt-6 bg-primary text-white py-3 hover:bg-primary-dull transition cursor-pointer uppercase'>Save Address</button>
+        </form>
           
           
         </div>  
